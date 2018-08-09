@@ -15,27 +15,30 @@ body{
 }
 /* Header ----------------------------------------------------------------------- */
 header{
-   width: 100%; background-color: var(--backColor); height: 60px;
+   width: 100%; background-color: transparent; height: 60px; position: fixed; top: 0; transition: ease-in-out 300ms;
 }
 nav{
-   padding: 0 20px; margin: 0 auto; max-width: 960px;
+   margin: 0 auto; max-width: 960px; padding: 0 30px; height: 100%;
 }
 .nav-icon{
-   display: flex; justify-content: space-between; align-items: center; height: 60px;
+   display: flex; justify-content: space-between; align-items: center; height: 100%;
 }
 #logo{
-   width: 100px;
+   width: 100px; transition: ease-in-out 300ms;
 }
 #burger{
-   width: 40px;
+   width: 40px; cursor: pointer;
 }
-.nav{
-   width: 100%; display: none; list-style: none;
+#nav{
+   display: none; list-style: none;
 }
-.nav a{
-   color: #f1f1f1; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; padding: 5px 10px; display: block;
+#nav-mobile{
+   width: 0; display: flex; list-style: none; flex-direction: column; transition: ease-in-out 500ms; position: absolute; right: 0; overflow: hidden; background-color: transparent;
 }
-.nav a:hover{
+#nav-mobile a{
+   color: #f1f1f1; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; padding: 10px 30px; display: block; background-color: var(--backColor); border-top: solid var(--bttnBackColor) 1px;
+}
+#nav-mobile a:hover{
    background-color: var(--bttnBackColor); color: #fff;
 }
 /* Banner ----------------------------------------------------------------------- */
@@ -133,8 +136,17 @@ footer p{
    nav{
       display: flex; justify-content: space-between; align-items: center;
    }
-   .nav{
-      display: flex; width: auto;
+   #nav-mobile{
+      display: none;
+   }
+   #nav{
+      width: auto; display: flex; flex-direction: row;
+   }
+   #nav a{
+      color: #f1f1f1; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; padding: 5px 15px; display: block; background-color: transparent; border-bottom: solid transparent .2rem;
+   }
+   #nav a:hover{
+      border-bottom: solid #fff .2rem;
    }
    /* About ------------------------------------------------------------ */
    .about-wrap{
@@ -154,6 +166,9 @@ footer p{
 /* Media Query (Web) ----------------------------------------------------------------------- */
 @media(min-width: 960px){
    /* Skills ----------------------------------------------------------------------- */
+   nav{
+      padding: 0;
+   }
    .skills-box{
       padding: 80px 100px;
    }
