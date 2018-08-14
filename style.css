@@ -12,10 +12,13 @@ body{
    --bttnBackColor: rgba(125, 91, 190, 1);
    --titleColor: rgba(140, 67, 255, 1);
    --fontP: .95rem;
+}/* Main ------------------------------------------------------------ */
+main{
+   display: grid; grid-template-columns: 1fr; grid-gap: 20px; align-items: center; justify-content: center;
 }
 /* Header ----------------------------------------------------------------------- */
 header{
-   width: 100%; background-color: transparent; height: 60px; position: fixed; top: 0; transition: ease-in-out 300ms;
+   width: 100%; background-color: transparent; height: 60px; position: fixed; top: 0; transition: ease-in-out 300ms; z-index: 5;
 }
 nav{
    margin: 0 auto; max-width: 960px; padding: 0 30px; height: 100%;
@@ -45,15 +48,24 @@ nav{
 .banner{
    background-image: linear-gradient(to bottom, rgba(99, 65, 165, 0.3), rgba(99, 65, 165, 0.3)), url('images/banner.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat; width: 100%; height: 100vh;
 }
+.banner-wrap{
+   margin: 0 auto; max-width: 960px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.banner-wrap img{
+   width: 500px;
+}
+.banner-wrap p{
+   color: #fff; font-size: 1.4rem; margin: 20px 0;
+}
 /* About ----------------------------------------------------------------------- */
 .about{
-   padding: 30px 30px;
+   padding: 0 20px;
 }
 .about-wrap{
-   display: grid; grid-template-columns: 1fr; grid-gap: 40px; justify-items: center; max-width: 960px; margin: 0 auto;
+   display: grid; grid-template-columns: 1fr; grid-gap: 40px; align-items:center; justify-content: center; max-width: 960px; margin: 0 auto;
 }
-.about-wrap img{
-   border-radius: 20px;
+.about-img{
+   border-radius: 20px; display: flex; align-items: center; justify-content: center;
 }
 .about-text{
    display: grid; grid-template-columns: 1fr; grid-gap: 30px;
@@ -66,7 +78,7 @@ nav{
 }
 /* Skills ----------------------------------------------------------------------- */
 .skills{
-   padding: 30px 30px;
+   padding: 0 20px;
 }
 .skills-wrap{
    display: grid; grid-template-columns: 1fr; text-align: center; max-width: 960px; margin: 0 auto;
@@ -92,22 +104,9 @@ nav{
 .skills-box h3{
    color: #333; font-size: 1rem; font-weight: 400;
 }
-/* Skills ----------------------------------------------------------------------- */
-.contact{
-   padding: 50px 30px; text-align: center;
-}
-.contact-wrap{
-   max-width: 960px; margin: 0 auto;
-}
-.contact-wrap a{
-   color: #fff; font-size: 1.1rem; font-weight: 400; text-decoration: none; padding: 20px 40px; background-color: var(--backColor); border: none; border-radius: 10px;
-}
-.contact-wrap a:hover{
-   background-color: var(--bttnBackColor);
-}
 /* Footer ----------------------------------------------------------------------- */
 footer{
-   background-color: #222; width: 100%; padding: 20px 30px;
+   background-color: #222; width: 100%; padding: 0 20px;
 }
 .footer-wrap{
    margin: 0 30px; max-width: 960px; margin: 0 auto;
@@ -129,6 +128,10 @@ footer p{
 }
 /* Media Query (Tablet) ----------------------------------------------------------------------- */
 @media(min-width: 700px){
+   /* Main ------------------------------------------------------------ */
+   main{
+      display: grid; grid-template-columns: 1fr; grid-gap: 60px;
+   }
    /* Header ------------------------------------------------------------ */
    #burger{
       display: none;
@@ -146,7 +149,7 @@ footer p{
       color: #f1f1f1; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; padding: 5px 15px; display: block; background-color: transparent; border-bottom: solid transparent .2rem;
    }
    #nav a:hover{
-      border-bottom: solid #fff .2rem;
+      color: var(--bttnBackColor);    
    }
    /* About ------------------------------------------------------------ */
    .about-wrap{
@@ -155,6 +158,9 @@ footer p{
    /* Skills ------------------------------------------------------------ */
    .skills-wrap{
       grid-template-columns: 1fr 1fr;
+   }
+   .skills-box{
+      box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.4);
    }
    .skills-box:first-child{
       border-radius: 20px 0 0 20px ; border-right: none; border-bottom: solid var(--fontColor) 1px;
