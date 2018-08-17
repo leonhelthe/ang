@@ -49,6 +49,17 @@ function scrollHeader() {
       logo.style.width = '100px';
    }
 }
+// Banner Event --------------------------------------------------------------
+window.onload = bannerAnimate;
+
+var bannerImage = document.getElementById('bannerImage');
+var bannerText = document.getElementById('bannerText');
+
+function bannerAnimate() {
+   bannerImage.style.transform = 'translateY(0)';
+   bannerText.style.transform = 'translateY(0)';
+
+}
 
 
 
