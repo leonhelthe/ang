@@ -63,7 +63,13 @@ nav{
    padding: 0 20px;
 }
 .about-wrap{
-   display: grid; grid-template-columns: 1fr; grid-gap: 40px; align-items:center; justify-content: center; max-width: 960px; margin: 0 auto;
+   display: grid; grid-template-columns: 1fr; grid-gap: 40px;max-width: 960px; margin: 0 auto;
+}
+.about-title{
+   align-items: center; justify-content: center;
+}
+.about-title .titles{
+   font-size: 1.5rem; font-weight: 400; color: #333; text-align: center; letter-spacing: 1px;
 }
 .about-img{
    border-radius: 20px; display: flex; align-items: center; justify-content: center;
@@ -82,16 +88,10 @@ nav{
    padding: 0 20px;
 }
 .skills-wrap{
-   display: grid; grid-template-columns: 1fr; text-align: center; max-width: 960px; margin: 0 auto;
+   display: grid; grid-template-columns: 1fr; grid-gap: 50px; text-align: center; max-width: 960px; margin: 0 auto; 
 }
 .skills-box{
    padding: 60px 20px; border: solid var(--fontColor) 1px; border-radius: 20px;
-}
-.skills-box:first-child{
-   border-radius: 20px 20px 0 0; border-bottom: none;
-}
-.skills-box:last-child{
-   border-radius: 0 0 20px 20px;
 }
 .skills-box h1{
    font-size: 1.3rem; color: #333; margin: 20px 0;
@@ -157,6 +157,9 @@ footer p{
       width: 450px;
    }
    /* About ------------------------------------------------------------ */
+   .about-title{
+      grid-column: 1/3;
+   }
    .about-wrap{
       grid-template-columns: 1fr 2fr;
    }
@@ -164,11 +167,8 @@ footer p{
    .skills-wrap{
       grid-template-columns: 1fr 1fr;
    }
-   .skills-box:first-child{
-      border-radius: 20px 0 0 20px ; border-right: none; border-bottom: solid var(--fontColor) 1px;
-   }
-   .skills-box:last-child{
-      border-radius: 0 20px 20px 0;
+   .skills-box{
+      padding: 50px 30px;
    }
 }
 /* Media Query (Web) ----------------------------------------------------------------------- */
@@ -180,9 +180,6 @@ footer p{
    /* Skills ----------------------------------------------------------------------- */
    nav{
       padding: 0;
-   }
-   .skills-box{
-      padding: 80px 100px;
    }
 }
 
