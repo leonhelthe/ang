@@ -60,6 +60,40 @@ function bannerAnimate() {
    bannerText.style.transform = 'translateY(0)';
 
 }
+// Portfolio Hover --------------------------------------------------------------
+var actvAngcoffee = document.getElementById('actv-angcoffee');
+var actvAngcoffee1 = document.getElementById('actv-angcoffee');
+var actvAngcoffee2 = document.getElementById('actv-angcoffee');
+var angCoffee = document.getElementById('angcoffee');
+var angCoffee1 = document.getElementById('angcoffee1');
+var angCoffee2 = document.getElementById('angcoffee2');
+
+angCoffee.addEventListener('mouseenter', portfolioHover);
+angCoffee.addEventListener('mouseleave', portfolioLeave);
+
+angCoffee1.addEventListener('mouseenter', portfolioHover);
+angCoffee1.addEventListener('mouseleave', portfolioLeave);
+
+angCoffee2.addEventListener('mouseenter', portfolioHover);
+angCoffee2.addEventListener('mouseleave', portfolioLeave);
+
+
+function portfolioHover() {
+   //actvAngcoffee.style.display = 'flex';
+   //actvAngcoffee.classList.toggle("m-fadeIn");
+   // actvAngcoffee.style.visibility = 'visibility';
+   actvAngcoffee.style.opacity = '1';
+   // actvAngcoffee.style.transition = 'visibility 0s linear 0s, opacity 300ms;';
+}
+
+function portfolioLeave() {
+   //actvAngcoffee.style.display = 'none';
+   //actvAngcoffee.classList.toggle("m-fadeOut");
+   // actvAngcoffee.style.visibility = 'hidden';
+   actvAngcoffee.style.opacity = '0';
+   // actvAngcoffee.style.transition = 'visibility 0s linear 0s, opacity 300ms;';
+}
+
 
 
 
