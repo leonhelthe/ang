@@ -49,6 +49,17 @@ function scrollHeader() {
       logo.style.width = '100px';
    }
 }
+// Nav Menu Event --------------------------------------------------------------
+// var portfolioNav = document.getElementById('portfolio');
+// var skillsNav = document.getElementById('skills');
+// var aboutNav = document.getElementById('about');
+
+// portfolioNav.addEventListener('click', menuHide);
+
+// function menuHide() {
+//    navMobile.style.width = '0'; //Menu Hide
+// }
+
 // Banner Event --------------------------------------------------------------
 window.onload = bannerAnimate;
 
