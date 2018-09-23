@@ -7,8 +7,11 @@ body{
 }
 /* Variables ----------------------------------------------------------------------- */
 :root{
+   --fontColorDark: #333;
    --fontColor: rgba(128, 128, 128, 1);
-   --backColor: rgba(99, 65, 165, 1);
+   --fontHover: #fff;
+   --headerColor: rgba(99, 65, 165, 0.7);
+   --navHover: rgba(99, 65, 165, 0.9);
    --bttnBackColor: rgba(125, 91, 190, 1);
    --titleColor: rgba(140, 67, 255, 1);
    --fontP: .95rem;
@@ -19,7 +22,7 @@ main{
 }
 /* Header ----------------------------------------------------------------------- */
 header{
-   width: 100%; background-color: transparent; height: 60px; position: fixed; top: 0; transition: ease-in-out 300ms; z-index: 5;
+   width: 100%; background-color: var(--headerColor); height: 60px; position: fixed; top: 0; transition: ease-in-out 300ms; z-index: 5;
 }
 nav{
    margin: 0 auto; max-width: 960px; padding: 0 20px; height: 100%;
@@ -40,39 +43,42 @@ nav{
    width: 0; display: flex; list-style: none; flex-direction: column; transition: ease-in-out 500ms; position: absolute; right: 0; overflow: hidden; background-color: transparent;
 }
 #nav-mobile a{
-   color: #f1f1f1; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; padding: 10px 20px; display: block; background-color: var(--backColor); border-top: solid var(--bttnBackColor) 1px;
+   color: var(--fontColorDark); text-decoration: none; font-weight: 400; font-size: .95rem; padding: 10px 20px; display: block; background-color: var(--headerColor); border-top: solid var(--bttnBackColor) 1px;
 }
 #nav-mobile a:hover{
-   background-color: var(--bttnBackColor); color: #fff;
+   color: var(--fontHover); background: var(--navHover);
 }
 /* Banner ----------------------------------------------------------------------- */
 .banner{
-   background-image: linear-gradient(to bottom, rgba(99, 65, 165, 0.3), rgba(99, 65, 165, 0.3)), url('images/banner.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat; width: 100%; height: 100vh;
+  width: 100%; height: 100vh;
 }
-.banner-wrap{
-   margin: 0 auto; max-width: 960px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 30px;
+.banner-wrap{ 
+   margin: 0 auto; max-width: 960px; height: 100%; display: flex; flex-direction: column; margin-top: 30px; padding: 0 3px; justify-content: center; align-content: center; text-align: center;
+}
+/* .banner-image{
+    background-image: url('images/banner.png'); background-position: center; background-size: cover; background-repeat: no-repeat; width: 100%; height: 100%;
+} */
+.banner-wrap h1{
+   color: #333; font-size: 2rem; margin: 50px 0;
 }
 .banner-wrap img{
-   width: 100%; transform: translateY(300px); transition: ease-in-out 800ms;
-}
-.banner-wrap p{
-   color: #fff; font-size: 1.4rem; margin: 20px 0; transform: translateY(-300px); transition: ease-in-out 800ms;
+  width: 100%; height: auto; margin: 20px 0;
 }
 /* Portfolio ----------------------------------------------------------------------- */
 .portfolio{
    padding: 20px; width: 100%; text-align: center;
 }
 .portfolio h1{
-   margin-bottom: 60px; font-size: 1.8rem;
+   margin-bottom: 60px; font-size: 1.7rem; color: var(--fontColorDark);
 }
 .portfolio-wrap{
-   margin: 0 auto; max-width: 960px; display: grid; grid-gap: 30px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   margin: 0 auto; max-width: 960px; display: grid; grid-gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 /* .portfolio-box-container{
    width: 100%; height: 240px; border-radius: 20px; overflow: hidden;
 } */
 .portfolio-box{
-   /*background: url('images/angcoffee.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat; */width: 100%; height: 240px; border-radius: 20px; position: relative; overflow: hidden;
+   /*background: url('images/angcoffee.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat; */width: 100%; height: 210px; border-radius: 20px; position: relative; overflow: hidden;
 }
 .portfolio-back{
   background-image: url("images/shakkyscafe.png"); background-position: center; background-size: cover; background-repeat: no-repeat; transition: ease-in-out 300ms; width: 100%; height: 100%;
@@ -125,7 +131,7 @@ nav{
    color: var(--titleColor); font-size: 1.2rem; font-weight: 400; margin: 50px 0 20px 0;
 }
 .skills-box h3{
-   color: #333; font-size: 1rem; font-weight: 400;
+   color: #333; font-size: 1rem; font-weight: 400; margin: 15px 0;
 }
 /* About ----------------------------------------------------------------------- */
 .about{
@@ -151,7 +157,7 @@ nav{
 }
 /* Footer ----------------------------------------------------------------------- */
 footer{
-   background-color: #222; width: 100%; padding: 30px 20px;
+   background-color: #222; width: 100%; padding: 20px;
 }
 .footer-wrap{
    margin: 0 30px; max-width: 960px; margin: 0 auto;
@@ -169,7 +175,7 @@ footer .social img{
    width: 120px; padding: 5px;
 }
 footer p{
-   color: #fff; font-size: 1rem;
+   color: #fff; font-size: 1rem; margin: 10px 0;
 }
 /* Media Query (Tablet) ----------------------------------------------------------------------- */
 @media(min-width: 700px){
@@ -191,14 +197,14 @@ footer p{
       width: auto; display: flex; flex-direction: row;
    }
    #nav a{
-      color: #f1f1f1; text-decoration: none; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; padding: 5px 15px; display: block; background-color: transparent; border-bottom: solid transparent .2rem; letter-spacing: 1px;
+      color: var(--fontColorDark); text-decoration: none; font-weight: 400; font-size: .9rem; padding: 20px 15px; display: block; background-color: transparent; border-bottom: solid transparent .2rem; letter-spacing: 1px;
    }
    #nav a:hover{
-      text-decoration: underline;
+      color: var(--fontHover);
    }
    /* Banner ------------------------------------------------------------ */
-   .banner-wrap img{
-      width: 450px;
+   .banner-wrap{
+      padding: 0 20px;
    }
    /* About ------------------------------------------------------------ */
    .about-title{
@@ -212,14 +218,14 @@ footer p{
       grid-template-columns: 1fr 1fr;
    }
    .skills-box{
-      padding: 80px 50px;
+      padding: 70px 50px;
    }
 }
 /* Media Query (Web) ----------------------------------------------------------------------- */
 @media(min-width: 960px){
    /* Banner ------------------------------------------------------------ */
-   .banner-wrap img{
-      width: 550px;
+   .banner-wrap{
+      padding: 0;
    }
    /* Skills ----------------------------------------------------------------------- */
    nav{

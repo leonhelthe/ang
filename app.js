@@ -12,7 +12,6 @@ var burgerStatus = 0;
 function showMenu() {
    if(burgerStatus === 0 && window.pageYOffset < 10) {
       navMobile.style.width = '100%'; //Menu Show
-      header.style.background = 'rgba(99, 65, 165, 1)'; //Header Color
 
       burgerStatus = 1;
    }
@@ -28,7 +27,6 @@ function showMenu() {
    }
    else if(burgerStatus === 1) {
       navMobile.style.width = '0'; //Menu Hide
-      header.style.background = 'transparent'; //Header Transparent
 
       burgerStatus = 0;
    }
@@ -38,13 +36,11 @@ window.addEventListener('scroll', scrollHeader);
 
 function scrollHeader() {
    if(window.pageYOffset > 10) {
-      header.style.background = 'rgba(99, 65, 165, 1)';
       header.style.height = '50px';
       logo.style.width = '90px';
 
    }
    else {
-      header.style.background = 'transparent';
       header.style.height = '60px';
       logo.style.width = '100px';
    }
@@ -61,16 +57,16 @@ function scrollHeader() {
 // }
 
 // Banner Event --------------------------------------------------------------
-window.onload = bannerAnimate;
+// window.onload = bannerAnimate;
 
-var bannerImage = document.getElementById('bannerImage');
-var bannerText = document.getElementById('bannerText');
+// var bannerImage = document.getElementById('bannerImage');
+// var bannerText = document.getElementById('bannerText');
 
-function bannerAnimate() {
-   bannerImage.style.transform = 'translateY(0)';
-   bannerText.style.transform = 'translateY(0)';
+// function bannerAnimate() {
+//    bannerImage.style.transform = 'translateY(0)';
+//    bannerText.style.transform = 'translateY(0)';
 
-}
+// }
 // Portfolio Hover --------------------------------------------------------------
 var actvAngcoffee = document.getElementById('actv-angcoffee');
 var actvAngcoffee1 = document.getElementById('actv-angcoffee');
@@ -105,8 +101,15 @@ function portfolioLeave() {
    // actvAngcoffee.style.transition = 'visibility 0s linear 0s, opacity 300ms;';
 }
 
+// Portfolio Hover --------------------------------------------------------------
+var footerLogo = document.getElementById('footer-logo');
 
+footerLogo.addEventListener('mouseenter', footerlogoChange);
+footerLogo.addEventListener('mouseleave', footerlogoDefault);
 
+function footerlogoChange() {
+   footerLogo.src = 'images/logo-banner1.png';
+}
 
 
 
