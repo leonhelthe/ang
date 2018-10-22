@@ -18,7 +18,7 @@ body{
 }
 /* Main ------------------------------------------------------------ */
 main{
-   display: grid; grid-template-columns: minmax(240px, 1fr); grid-gap: 50px;
+   display: grid; grid-template-columns: minmax(240px, 1fr); grid-gap: 50px; scroll-behavior: smooth; overflow-y: scroll;
 }
 /* Header ----------------------------------------------------------------------- */
 header{
@@ -43,23 +43,23 @@ nav{
    width: 0; display: flex; list-style: none; flex-direction: column; transition: ease-in-out 500ms; position: absolute; right: 0; overflow: hidden; background-color: transparent;
 }
 #nav-mobile a{
-   color: var(--fontColorDark); text-decoration: none; font-weight: 400; font-size: .95rem; padding: 10px 20px; display: block; background-color: var(--headerColor); border-top: solid var(--bttnBackColor) 1px;
+   color: var(--fontHover); text-decoration: none; font-weight: bold; font-size: .95rem; padding: 10px 20px; display: block; background-color: var(--headerColor); border-top: solid var(--bttnBackColor) 1px; text-transform: uppercase;
 }
 #nav-mobile a:hover{
-   color: var(--fontHover); background: var(--navHover);
+   /*color: var(--fontHover);*/ background: var(--navHover);
 }
 /* Banner ----------------------------------------------------------------------- */
 .banner{
-  width: 100%; height: 100vh;
+  width: 100%; height: 500px;
 }
 .banner-wrap{ 
-   margin: 0 auto; max-width: 960px; height: 100%; display: flex; flex-direction: column; margin-top: 30px; padding: 0 3px; justify-content: center; align-content: center; text-align: center;
+   margin: 0 auto; max-width: 960px; height: 100%; display: flex; flex-direction: column; margin-top: 60px; padding: 0 3px; justify-content: center; align-content: center; text-align: center;
 }
 /* .banner-image{
     background-image: url('images/banner.png'); background-position: center; background-size: cover; background-repeat: no-repeat; width: 100%; height: 100%;
 } */
 .banner-wrap h1{
-   color: #333; font-size: 2rem; margin: 50px 0;
+   color: #333; font-size: 2rem; margin: 0 0 50px 0;
 }
 .banner-wrap img{
   width: 100%; height: auto; margin: 20px 0;
@@ -178,10 +178,14 @@ footer p{
    color: #fff; font-size: 1rem; margin: 10px 0;
 }
 /* Media Query (Tablet) ----------------------------------------------------------------------- */
-@media(min-width: 700px){
+@media(min-width: 768px){
    /* Main ------------------------------------------------------------ */
    main{
       grid-gap: 60px;
+   }
+   /* Banner ------------------------------------------------------------ */
+   .banner{
+     height: 100vh;
    }
    /* Header ------------------------------------------------------------ */
    #burger{
@@ -197,10 +201,10 @@ footer p{
       width: auto; display: flex; flex-direction: row;
    }
    #nav a{
-      color: var(--fontColorDark); text-decoration: none; font-weight: 400; font-size: .9rem; padding: 20px 15px; display: block; background-color: transparent; border-bottom: solid transparent .2rem; letter-spacing: 1px;
+      color: var(--fontHover); margin: 0 10px; text-decoration: none; font-weight: bold; font-size: .9rem; padding: 5px 0; display: block; background-color: transparent; border-bottom: solid transparent .2rem; letter-spacing: 1px; text-transform: uppercase;
    }
    #nav a:hover{
-      color: var(--fontHover);
+      /*color: var(--fontHover);*/ border-bottom: solid 3px #fff;
    }
    /* Banner ------------------------------------------------------------ */
    .banner-wrap{
