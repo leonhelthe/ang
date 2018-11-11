@@ -4,10 +4,25 @@ var header = document.getElementById('header');
 var navMobile = document.getElementById('nav-mobile');
 var burger = document.getElementById('burger');
 var logo = document.getElementById('logo');
-
-burger.addEventListener('click', showMenu);
+var bttnLink = document.getElementById('bttnlink');
+var bttnLink1 = document.getElementById('bttnlink1');
+var bttnLink2 = document.getElementById('bttnlink2');
 
 var burgerStatus = 0;
+
+burger.addEventListener('click', showMenu);
+bttnLink.addEventListener('click', function(){
+   navMobile.style.width = '0';
+   burgerStatus = 0;
+});
+bttnLink1.addEventListener('click', function(){
+   navMobile.style.width = '0';
+   burgerStatus = 0;
+});
+bttnLink2.addEventListener('click', function(){
+   navMobile.style.width = '0';
+   burgerStatus = 0;
+});
 
 function showMenu() {
    if(burgerStatus === 0 && window.pageYOffset < 10) {
